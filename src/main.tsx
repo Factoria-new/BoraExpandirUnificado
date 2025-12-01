@@ -7,7 +7,9 @@ import { ClienteApp } from '@/modules/cliente/ClienteApp'
 import { FinanceiroApp } from '@/modules/financeiro/FinanceiroApp'
 import { JuridicoApp } from '@/modules/juridico/JuridicoApp'
 import  AdmApp  from '@/modules/adm/AdmApp'
-import Parceiro from '@/modules/parceiro/Parceiro'
+import ParceiroApp from '@/modules/parceiro/ParceiroApp'
+import CadastroParceiro from './modules/parceiro/CadastroParceiro'
+import TelaIndicado from './modules/parceiro/TelaIndicado'
 
 function Home() {
   return (
@@ -36,7 +38,9 @@ function AppRouter() {
         <Route path="/financeiro/*" element={<FinanceiroApp />} />
         <Route path="/juridico/*" element={<JuridicoApp />} />
         <Route path="/adm/*" element={<AdmApp />} />
-        <Route path="/parceiro/*" element={<Parceiro />} />
+        <Route path="/parceiro/*" element={<ParceiroApp />} />
+         <Route path="/parceiro/cadastro*" element={<CadastroParceiro />} />
+          <Route path="/parceiro/indicado*" element={<TelaIndicado partnerName={''} partnerId={''} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
